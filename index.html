@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+<style type="text/css">
+    .html {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .block {
+        position: relative;
+        height: 640px;
+        width: 100%;
+    }
+
+    .date {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        height: 45%;
+    }
+
+    .bar {
+        display: grid;
+        grid-template-rows: 90% 10%;
+        justify-content: center;
+        align-items: center;
+        width: 8.33%;
+        height: 50%;
+        float: left;
+    }
+
+    .pill1 {
+        display: grid;
+        margin: auto;
+        margin-bottom: 20%;
+        align-self: flex-end;
+        border: 10px;
+        width: 20px;
+        border-radius: 30px;
+        height: 99%;
+        background: rgb(35, 152, 160);
+    }
+
+    .here {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 35px;
+        height: 35px;
+        width: 35px;
+        font-weight: solid;
+        background: rgb(183, 188, 189, 0.5);
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+</style>
+<title>New Symbol for big Three</title>
+
+<div class="block" style="text-align:center">
+    <div class="date">
+        Aug<br><br>
+        R1 260<br><br>
+        Spent
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a><a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Jan</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Feb</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Mar</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Apr</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">May</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Jun</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Jul</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Aug</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Sep</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Oct</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Nov</div>
+    </div>
+    <div class="bar">
+        <div class="pill1"></div>
+        <div class="here">Dec</div>
+    </div>
+
+</div>
+
+</html>
