@@ -6,16 +6,6 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        height: 100%;
-        width: 100%;
-    }
-
-    .body {
-        display: grid;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        text-align: center;
     }
 
     .block {
@@ -25,12 +15,12 @@
     }
 
     .date {
+        height: 640px;
+        width: auto;
         display: grid;
         justify-content: center;
         align-items: center;
-        width: 100%;
         text-align: center;
-        height: 45%;
     }
 
     .bar {
@@ -46,17 +36,18 @@
     .pill1 {
         display: grid;
         margin: auto;
-        margin-bottom: 20%;
-        align-self: flex-end;
+        margin-bottom: 5%;
+        margin-top: 5%;
         border: 10px;
         width: 20px;
         border-radius: 30px;
-        height: 99%;
+        height: 70%;
         background: rgb(35, 152, 160);
     }
 
     .here {
         display: grid;
+        margin: auto;
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -67,7 +58,16 @@
         background: rgb(183, 188, 189, 0.5);
     }
 
-    /* Next & previous buttons */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .slideshow-container {
+        position: relative;
+        margin: auto;
+    }
+
     .prev,
     .next {
         cursor: pointer;
@@ -76,7 +76,7 @@
         width: auto;
         margin-top: -22px;
         padding: 16px;
-        color: white;
+        color: rgb(167, 159, 159);
         font-weight: bold;
         font-size: 18px;
         transition: 0.6s ease;
@@ -90,70 +90,109 @@
         border-radius: 3px 0 0 3px;
     }
 
-    /* On hover, add a black background color with a little bit see-through */
+    .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
     .prev:hover,
     .next:hover {
         background-color: rgba(0, 0, 0, 0.8);
     }
+
+    .active,
+    .dot:hover {
+        height: 350px;
+    }
+
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
 </style>
 <title>New Symbol for big Three</title>
 
-<div class="block" style="text-align:center">
-    <div class="date">
-        Aug<br><br>
-        R1 260<br><br>
-        Spent
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a><a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Jan</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Feb</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Mar</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Apr</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">May</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Jun</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Jul</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Aug</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Sep</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Oct</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Nov</div>
-    </div>
-    <div class="bar">
-        <div class="pill1"></div>
-        <div class="here">Dec</div>
-    </div>
+<a class="prev" style="text-align:center" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" style="text-align:center" onclick="plusSlides(1)">&#10095;</a>
+
+<div class="date" style="text-align:center">
+    Aug<br><br>
+    R1 260<br><br>
+    Spent
+    <div class="pill1"></div>
+    <div class="here">Jan</div>
 
 </div>
+
+<div class="date" style="text-align:center">
+    Aug<br><br>
+    R1 60<br><br>
+    Spent
+    <div class="pill1"></div>
+    <div class="here">Feb</div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<div class="date" style="text-align:center">
+    Aug<br><br>
+    R8 780<br><br>
+    Spent
+    <div class="pill1"></div>
+    <div class="here">Mar</div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("date");
+        var dots = document.getElementsByClassName("date");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
 
 </html>
